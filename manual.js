@@ -46,7 +46,11 @@ array.every( x => x)
 array.slice(a, b)
 	// == array[a:b]
 array.includes(a, b)
-	// == a in array[b:]
+	// == a in array[b:] 
+BigInt(x)
+	// Avoids sci notation
+x.toString() or String(x)
+	// == str(x)
 
 //--------Terminal-------
 cp -b file1 file2 //Copy file
