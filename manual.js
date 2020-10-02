@@ -1,6 +1,6 @@
 parseInt(string, base) 
 	// == int(string) 
-array.map(function) 
+array.map((item, index, array) => return) 
 	// == list(map(function, array))
 array.shift() 
 	// == array.pop(0)
