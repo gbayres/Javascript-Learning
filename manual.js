@@ -123,3 +123,18 @@ generic(x) // >> 2
 
 //--------Terminal-------
 cp -b file1 file2 //Copy file
+
+//---------------------------------------------------
+var nome = prompt("Qual é seu nome?"); => faz pergunta ao user
+alert("Bem vindo, " + nome);
+
+switch(n){
+	case 1:
+		alert("Boa escolha");
+		break
+	case 2:
+		alert();
+		break
+	default:
+		alert("blablabla")
+}
