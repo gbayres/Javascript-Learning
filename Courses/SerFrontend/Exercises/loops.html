@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Logica de Programação Javascript</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Lógica de programação com Javascript</h1>
+        <button onclick="criarTab()">Mostrar tabuada</button>
+        <button onclick="limparTab()">Limpar tabuada</button>
+        
+        <div id="testando"></div>
+
+
+        
+        
+        <script>
+            
+            function limparTab(){
+                var x = document.querySelector("#testando");
+    
+                x.innerHTML = "";
+            }
+        
+        function criarTab(){
+            var x = document.querySelector("#testando");
+            var n = parseInt(prompt("Insira um número: "));
+
+            limparTab();
+
+            for (i=1; i < 100; i++){
+                x.innerHTML += n*i + "<br>" ;
+            }
+        }
+                 
+            
+            
+        </script>
+    </body>
+</html>

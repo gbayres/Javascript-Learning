@@ -138,3 +138,15 @@ switch(n){
 	default:
 		alert("blablabla")
 }
+
+operador !=  => refere-se apenas ao valor
+operador !== => refere-se ao valor e ao tipo
+Math.random()
+
+do {
+	console.log("teste");
+} while (i < 0); => executa ao menos uma vez
+
+var x = document.querySelector("#testando");
+x.innerHTML = "texto inserido";
+<button onclick="function(param1, param2)"></button>

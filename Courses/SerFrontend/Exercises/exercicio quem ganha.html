@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Logica de Programação Javascript</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Lógica de programação com Javascript</h1>
+        
+        <script>
+            
+            var n1 = parseInt(prompt("Digite um número: "));
+            var n2 = parseInt(prompt("Digite um número: "));
+
+            if (n1 === n2){
+                alert("Empate!");
+            }
+
+            else{
+                var index = parseInt(2 * Math.random());
+                
+                if ( (index === 1 && (n1 > n2)) || (index === 0 && (n1 < n2))){
+                        alert("Ganhou n1! Sorteado: " + index)
+                    }
+
+                    else{
+                        alert("Ganhou n2! Sorteado: " + index)
+                    }                
+            }
+                 
+            
+            
+        </script>
+    </body>
+</html>

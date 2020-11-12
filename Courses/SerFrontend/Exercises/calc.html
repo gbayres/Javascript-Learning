@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Logica de Programação Javascript</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Lógica de programação com Javascript</h1>
+        <button onclick="sum()">+</button>
+        <button onclick="sub()">-</button>
+        <button onclick="mult()">*</button>
+        <button onclick="div()">/</button>
+        
+        <div id="testando">0</div>
+
+
+        
+        
+        <script>
+            
+
+            var x = 0;
+            var my_div = document.querySelector("#testando");
+
+            alert(my_div.innerHTML);
+
+            function sum(){
+                x += parseInt(prompt("Insira um número: "));
+                my_div.innerHTML = x;
+            }
+            function div(){
+                x /= parseInt(prompt("Insira um número: "));
+                my_div.innerHTML = x;
+            }
+            function mult(){
+                x *= parseInt(prompt("Insira um número: "));
+                my_div.innerHTML = x;
+            }
+            function sub(){
+                x -= parseInt(prompt("Insira um número: "));
+                my_div.innerHTML = x;
+            }
+        
+      
+          
+            
+            
+        </script>
+    </body>
+</html>
