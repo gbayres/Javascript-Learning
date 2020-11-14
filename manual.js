@@ -18,6 +18,7 @@ num.toFixed(4)
 	// == round(num, 4)
 list.push('item') 
 	// == list.append('item')
+	// Retorna a len da array depois da adição
 Math.abs(valor) 
 	// == abs(valor)
 list.sort( (a, b) => {return a < b ? -1 : a > b ? 1 : 0} 
@@ -147,6 +148,29 @@ do {
 	console.log("teste");
 } while (i < 0); => executa ao menos uma vez
 
-var x = document.querySelector("#testando");
+var x = document.querySelector("#testando").textContent;
 x.innerHTML = "texto inserido";
+x.textContent => só o texto
 <button onclick="function(param1, param2)"></button>
+throw new Error("Deu pau") => joga erro no console
+
+var hoje = new Date()
+\ é caracter de escape
+debugger; => força parada;
+(f(){})(); => função auto-invocável (IIFE)
+
+function(){
+	'use strict'; => não permite criar variaveis sem var
+}
+
+function f(arr){
+	console.log(arguments);
+}
+
+document.getElementById("only") => pega o elemento
+document.getElementsByClassName("clearfix") => pega uma coleção de elementos
+document.getElementsByTagName()..
+document.querySelectorAll("#item h2") => retorna coleção dos h2 dentro do id "item"
+document.querySelector('#txtNome').disabled = true
+document.querySelector('#txtNome').readOnly = true
+<script src="beluga.js"></script>
