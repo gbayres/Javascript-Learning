@@ -174,3 +174,22 @@ document.querySelectorAll("#item h2") => retorna coleção dos h2 dentro do id "
 document.querySelector('#txtNome').disabled = true
 document.querySelector('#txtNome').readOnly = true
 <script src="beluga.js"></script>
+calcular.apply(this, [a,b,c,d,e]);
+
+=======
+var btn = document.getElementById("btn");
+
+function clicar(){
+	alert("clicar");
+}
+btn.addEventListener("click", () => {alert("clicou")};, true) => esse terceiro parametro significa mudar a ordem de propagação
+
+document.addEventListener("click", function(evento){
+	console.log(evento.currentTarget); => o alvo do click
+	console.log(this); => objeto ao qual atrelei o evento
+	console.log(evento.target); => objeto ao qual atrelei o evento
+	evento.stopPropagation();
+	evento.target.nodeName => nome da tag
+})
+
+element.style.color = "blue";
