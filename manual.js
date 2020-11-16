@@ -193,3 +193,32 @@ document.addEventListener("click", function(evento){
 })
 
 element.style.color = "blue";
+
+(function{
+	'use strict';
+	var $form = document.querySelector('form');
+	var $txtUser = document.getElementById('txtUser');
+	var $txtPass = document.getElementById('txtPass');
+	var $btn = document.getElementById('btn');
+
+	$form.addEventListener("submit", function(e) {
+		if(!$txtUser.value || !$txtPass.value){
+			alert("Preencha todos os campos");
+			e.preventDefault();
+		}
+	})
+}
+
+$txtMsg.addEventListener('keypress', keypress);
+$txtMsg.addEventListener('keyup', keyup);
+$txtMsg.addEventListener('keydown', keydown); 
+$txtMsg.addEventListener('input', input); => escuta os inputs no textarea
+
+
+
+"keyup", "keydown"
+"keypress" só pega quando aperto caracter
+$n_caracteres.textContent = $texto.getAttribute("maxlength");
+							$texto.maxLength
+$container.styleMedia.display = "block";
+				
