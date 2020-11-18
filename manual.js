@@ -221,4 +221,62 @@ $txtMsg.addEventListener('input', input); => escuta os inputs no textarea
 $n_caracteres.textContent = $texto.getAttribute("maxlength");
 							$texto.maxLength
 $container.styleMedia.display = "block";
-				
+$elemento.focus();
+
+e.keyCode => retorna codigo da tecla apertada
+$item.classList.toggle("classe"); => muda a classe selecionada
+var $lis = $ul.querySelectorAll("li"); => pega apenas li dentro de ul
+confirm("deseja realment excluir?");
+$li.parentNode => mostra a $ul
+li.parentNode.removeChild(li);
+$element.getAttribute("disabled")
+$element.setAttribute("disabled", false);
+
+var teste = "minha string linda";
+teste.replace("i","I"); => substitui o primeiro i por I
+teste.replace(/i/g, "I"); => substitui todos i por I
+teste.indexOf("i"); => encontra o primeiro index do i
+teste.lastIndexOf("i"); => encontra o último index do i
+teste.substring(10, 5) => unica diferença pro slice é que esse entende a ordem invertida
+window.addEventListener('load', func);
+n.toPrecision(2) => fala que o numero só pode ter 2 algarismos
+n.toString(16) => converte pra hexa
+n.toExponential(2) => converte p notação cientifica c 2 digitos apos o ponto
+Math.min(1,2,3)
+Math.max(1,2,3)
+Math.round(55.55)
+Math.floor(55.55)
+Math.CSSRuleList(55.55);
+Math.pow(2, 3)
+Math.createImageBitmap(8)
+Math.random();
+Math.PI
+document.querySelector('body').style.backgroundImage 
+array.every( function(elemento, indice, objeto){
+	console.log(elemento);
+	console.log(indice);
+	console.log(objeto);
+	return true
+
+})
+array.some((e,i,o) => {});
+array.fiter((e, i, o) => {});
+array.forEach((e, i, o) => {
+	console.log(e,i,o)
+})
+array.indexOf('banana', 5); => começa a procurar a partir do 5
+array.lastIndexOf('banana', 3); => começa a partir do 3 de trás pra frente
+array.map((e, i, o) =>{
+	if (typeof e === 'number'){
+		return e * i
+	}
+	return e
+}
+)
+array1.concat(array2) => junta duas arrays
+array.join(",");
+var ultimo = array.pop()
+var primeiro = array.shift()
+array.unshift("ola") => como se fosse push pro inicio
+inicio: shift, unshift
+final: push, pop
