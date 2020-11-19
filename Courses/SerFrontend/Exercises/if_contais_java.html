@@ -3,8 +3,32 @@
     <head>
         <title>Logica de Programação Javascript</title>
         <meta charset="utf-8">
+
+        <style>
+            .has_javascript {
+                color: blue;
+            }
+
+            .popup {
+                display: block;
+                background-color: blue;
+                position: fixed;
+                bottom: 0;
+                left: 35%;
+                width: 30%;
+                height: 5em;
+                margin: auto;
+                transform: translateY(5em);
+                transition: transform .5s ease-in-out;
+            }
+
+            .sobe {
+                transform: translateY(-10em);
+            }
+        </style>
     </head>
     <body>
+        <div class="popup"></div>
         <h1>Lógica de programação com Javascript</h1>
         <p>It is a long established <b> fact </b> that a reader will be distracted by the readable 
             content of a page when looking at its layout. The point of using Lorem Ipsum 
@@ -16,7 +40,7 @@
             (injected humour and the like).</p>
 
         <p>It is a long established <b> fact </b> that a <b>reader</b> will be distracted by the readable 
-            content of a page when looking at its layout. The point of using Lorem Ipsum 
+            content of a page when javascript at its layout. The point of using Lorem Ipsum 
             is that it has a more-or-less normal distribution of letters, as opposed to using 
             'Content here, content here', making it look like readable English. Many desktop 
             publishing packages and web page editors now use Lorem Ipsum as their default model text, 
@@ -35,24 +59,24 @@
                 
         
         <script>
-            function get_pos(string, substring, index){
-                return string.split(substring, index).join(substring).length
+            
+            function sobe() {
+                $popup.classList.toggle("sobe");
             }
+
+
+            var $popup = document.getElementsByClassName("popup")[0];
+            window.addEventListener('load', () => {
+                setTimeout(sobe, 5000);
+                setTimeout(sobe, 10000);
+            });
 
             var $paragraphs = document.getElementsByTagName("p");
             for (var $p of $paragraphs) {
                 var $p_content = $p.textContent;
                 
-                var text_split = $p_content.split(" ").filter((a) => {return a !== ""});
-                if (text_split.length > 10){
-                    var penult_space_pos = get_pos($p_content, " ", 10);
-                    var inn = $p.innerHTML
-                    console.log(penult_space_pos);
-                    var final = inn.search(text_split[9]);
-                    console.log(final);
-                    $p.innerHTML = inn.slice(0, final);
-
-
+                if ($p_content.search("javascript") !== -1){
+                    $p.classList.toggle("has_javascript");
                 }
 
             }

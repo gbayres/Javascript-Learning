@@ -174,7 +174,7 @@ document.querySelectorAll("#item h2") => retorna coleção dos h2 dentro do id "
 document.querySelector('#txtNome').disabled = true
 document.querySelector('#txtNome').readOnly = true
 <script src="beluga.js"></script>
-calcular.apply(this, [a,b,c,d,e]);
+calcular.apply(this, [a,b,c,d,e]); => aplica lista como argumentos
 
 =======
 var btn = document.getElementById("btn");
@@ -280,3 +280,17 @@ var primeiro = array.shift()
 array.unshift("ola") => como se fosse push pro inicio
 inicio: shift, unshift
 final: push, pop
+array.reduce((acc, e, i) => {}, 0);
+array.reduceRight((acc, e, i) => {}, 0); => faz a mesma coisa, só que com a array invertida
+array.reverse();
+array.slice(1,2);
+array.splice(pos_inicial, n_itens_p_remover, "item1", "item") => adiciona elementos a partir da posição, exclui o tanto desejado e retorna os elementos excluídos
+string.split(" ", 4) => divide em 4 pedaços
+$item.className = => retorna a classe como string ou seta a classe
+setTimeout(fn, ms), => atrelados ao window
+var id = setInterval(fn, ms),
+clearTimeout(id),
+clearInterval(id)
+
+$banner.parentNode.removeChild($banner)
+$bannerBtn.removeEventListener('click', func);
