@@ -294,3 +294,29 @@ clearInterval(id)
 
 $banner.parentNode.removeChild($banner)
 $bannerBtn.removeEventListener('click', func);
+
+innerWidth, innerHeight, outerWidth, outerHeight...
+pageXOffset, pageYOffset => distancia de scroll
+screenX, screenY => distancias em relação ao monitor
+
+history.length => mostra tamanho histórico de navegação
+history.go(-1) => caminha os passos passados por argumento
+history.forward()
+history.back()
+location.protocol
+location.href
+location.search
+location.reload()
+location.assign("http://google.com/")
+location.replace("http://google.com/") => não altera histórico
+navigator
+screen
+window.open("link", "width=600", "height=400") => abre outra aba 
+window.opener => vê quem chamou a página
+window.close() => só funciona se abrir com open
+window.scrollTo(0, 50)
+window.scrollBy(0, 10)
+print() => manda imprimir a página
+valores para addEventListener => 'load', 'resize', 'error', 'scroll'
+unloaad e beforeunload
+DOMContentLoaded vs load
