@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Logica de Programação Javascript</title>
+        <meta charset="utf-8">
+
+        <style>
+         
+
+            .relogio{
+
+                background-color: crimson;
+                width: 35rem;
+                margin: auto;
+                height: 6rem;
+                color: white;
+                font-size: 4.5rem;
+                padding-left: 5%;
+                box-sizing: border-box;
+                /* text-align: center; */
+                border-radius: 3rem;
+
+            }
+
+            .botoes{
+                width: 25rem;
+                margin: auto;
+                height: 4rem;
+                text-align: center;
+                margin-top: 2rem;
+                border: solid black .2rem;
+                border-radius: .5rem;
+            }
+
+            .botoes button{
+                height: 3em;
+                border-radius: 1rem;
+                margin-top: .7rem;
+
+            }
+
+           
+        </style>
+    </head>
+    <body>
+        <div class="relogio">00:00:00:000</div>
+        <div class="botoes">
+            <button class="iniciar">Iniciar</button>
+            <button class="parar">Parar</button>
+            <button class="pausar">Pausar</button>
+        </div>             
+        
+        <script>
+
+            var $iniciar = document.querySelector(".iniciar");
+            var $parar = document.querySelector(".parar");
+            var $pausar = document.querySelector(".pausar");
+
+            $iniciar.addEventListener("click", iniciar); 
+            $parar.addEventListener("click", parar); 
+            $pausar.addEventListener("click", pausar); 
+
+            var horaInicial;
+            deltaPausa = 0;
+
+            function zeroPadding(n, k = 1){
+                if (n < 10 && k === 1) {
+                    return "0" + n
+                }
+
+                else if (n < 10 && k === 1){
+                    return "00" + n
+                }
+
+                else if (n < 100 && k === 2) {
+                    return "0" + n
+                }
+
+                return n
+            }
+            
+            function setarZero (){
+                document.querySelector(".relogio").textContent = "00:00:00:000";
+            }
+
+
+
+            function pegaHora(){
+                var horaAtual = new Date().getTime();
+                
+                var diferenca = horaAtual - horaInicial + deltaPausa
+                
+                var horas = parseInt(diferenca / 3600000)
+                
+                var restante = diferenca % 3600000;
+
+                var minutos = parseInt(restante / 60000);
+                
+                restante = diferenca % 60000;
+
+                var segundos = parseInt(restante / 1000)
+
+                var milissegundos = restante % 1000;
+                
+                return zeroPadding(horas) 
+                + ":" + zeroPadding(minutos) 
+                + ":" + zeroPadding(segundos) 
+                + ":" + zeroPadding(milissegundos, 2);
+            }
+            
+            function setarHora(){
+                document.querySelector(".relogio").textContent = pegaHora()
+            }
+           
+            function iniciar(){
+                horaInicial = new Date().getTime();
+                interval = setInterval(setarHora, 1)
+            }
+            
+            function parar(){
+                deltaPausa = 0;
+                setarZero();
+                clearInterval(interval);
+            }
+
+            function pausar(){
+                deltaPausa += new Date().getTime() - horaInicial;
+                clearInterval(interval);
+
+            }
+            
+            
+            
+        </script>
+    </body>
+</html>

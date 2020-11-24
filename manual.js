@@ -320,3 +320,10 @@ print() => manda imprimir a página
 valores para addEventListener => 'load', 'resize', 'error', 'scroll'
 unloaad e beforeunload
 DOMContentLoaded vs load
+$teste.style.background => o style define ou recupera elementos inline
+window.getComputedStyle($p);
+$p.offsetHeight, $p.offsetWidth, .offsetLeft .offsetTop
+$div.getBoundingClientRect()
+$links[1].getAttribute('href')
+Date.now()
+$element.removeAttribute('style');
