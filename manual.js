@@ -327,3 +327,23 @@ $div.getBoundingClientRect()
 $links[1].getAttribute('href')
 Date.now()
 $element.removeAttribute('style');
+Date.toLocaleDataString("pt-BR") // .toLocaleTimeString
+
+this.displayDate = this.currentDate.toLocaleDateString(this._locale, {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+});
+
+initButtonsEvents(){
+        let $buttons = document.querySelectorAll("#buttons > g, #parts > g");
+        
+        $buttons.forEach((btn, index) => {
+            btn.addEventListener("click", (e) => {
+                console.log(btn.className.baseVal.replace("btn-",""));
+            })
+        })
+
+    }
+
+
