@@ -36,12 +36,26 @@ class CalcController {
 
     }
 
+    isOperator(value){
+        return (value in ["+", "-", "*", "/", "%"])
+    }
+
     addOperation(value){
-        this._operation.push(value);
+        if (isNaN(this.getLastOperation())) {
+            if (this.isOperator(value)){
+            
+            
+            } else if (isNaN(value)) {
+                console.log(value);
+            } else {
+            let newValue = this.getLastOperation().toString() + value.toString()
+            this._operation.push(newValue);
+        }
+
     }
 
     getLastOperation(){
-        return this._operation[_operation.length - 1];
+        return this._operation[this._operation.length - 1];
     }
 
     execBtn(value){
@@ -57,49 +71,75 @@ class CalcController {
 
         console.log(this._operation);
         
-        // switch(value){
-        //     case 'ac':
-        //         this.clearAll();
-        //     break;
-            
-        //     case 'ce':
-        //         this.clearEntry();
-        //     break;
-            
-        //     case 'soma':
-
-        //     break;
-
-            
-        //     case 'subtracao':
-
-        //     break;
+        let equivalences = {
+            "soma": "+",
+            "subtracao": "-",
+            "divisao": "/",
+            "multiplicacao": "*",
+            "porcento": "%",
+            "igual": "=",
+            "ponto": ".",
+        }
+        
+        switch(value){
 
             
-        //     case 'divisao':
+            case 'soma':
 
-        //     break;
-
+            break;
             
-        //     case 'multiplicacao':
+            case 'subtracao':
 
-        //     break;
+            break;
+ 
+            case 'divisao':
 
-        //     case 'porcento':
+            break;
 
-        //     break;
+            case 'multiplicacao':
 
-        //     case 'igual':
+            break;
 
-        //     break;
+            case 'porcento':
 
-        //     case 
+            break;
 
-        //     default:
-        //         this.setError();
-        //         break;
+            case 'igual':
 
-        // }
+            break;
+
+            case 'ponto':
+
+            break;
+
+
+
+            case 'ac':
+                this.clearAll();
+            break;
+            
+            case 'ce':
+                this.clearEntry();
+            break;
+
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+
+
+
+            default:
+                this.setError();
+                break;
+
+        }
     }
 
     setError(){
