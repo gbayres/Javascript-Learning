@@ -1,0 +1,156 @@
+.Comentario {
+    background-color: rgba(43, 43, 100, 0.5);
+    border-radius: 2em;
+    display: block;
+    box-sizing: border-box;
+    padding: 2em;
+    width: 50%;
+    margin: auto;
+    margin-top: 2em;
+}
+
+.Comentario:hover {
+    animation: blink 2s linear infinite alternate,
+               bounce .5s ease-in-out infinite alternate;
+    cursor: pointer;
+}
+
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes bounce{
+    0%{
+        transform: translateY(0%);
+    }
+
+    50%{
+        transform: translateY(-5%);
+    }
+
+    100%{
+        transform: translateY(+5%);
+    }
+}
+
+.blueBtn {
+    box-sizing: border-box;
+    border-radius: 1em;
+    background-color: #009bbb;
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    color: white;
+    font-variant: small-caps;
+    font-size: 1.5rem;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.ball {
+    position: absolute;
+    top: 4.5rem;
+    left: 4.5rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #009bbb;
+    border-radius: 50%;
+    transform-origin: center;
+}
+
+
+@keyframes rotateLoading{
+    0%{
+        transform: rotate(0deg);
+    }
+    
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes changeColor{
+    0%{
+        background-color: #009bbb;
+    }
+
+    20%{
+        background-color: #F00;
+    }
+
+    40%{
+        background-color: #0F0;
+    }
+
+    60%{
+        background-color: #00F;
+    }
+
+    80%{
+        background-color: #FF0;
+    }
+
+    100%{
+        background-color: #0FF;
+
+    }
+}
+
+.divToda {
+    transform-origin: center;
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    margin: auto;
+    animation: rotateLoading linear infinite 5s;
+}
+
+.divToda:hover{
+    animation-duration: .5s;
+    cursor: pointer;
+}
+
+.divToda:hover .ball{
+    animation: changeColor linear infinite alternate 5s;
+}
+
+.b1{
+    transform: translateX(-3rem);
+}
+.b2{
+    transform: translateX(+3rem);
+}
+.b3{
+    transform: translateY(-3rem);
+}
+.b4{
+    transform: translateY(+3rem);
+}
+.b5{
+    transform: translate(-2.121rem, +2.121rem);
+}
+.b6{
+    transform: translate(+2.121rem, +2.121rem);
+}
+.b7{
+    transform: translate(-2.121rem, -2.121rem);
+}
+.b8{
+    transform: translate(+2.121rem, -2.121rem);
+}
+
+.formulario {
+    width: 50vw;
+    margin: auto;
+
+}
+
+.formulario *{
+    display: block;
+    margin: auto;
+}
