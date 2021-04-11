@@ -1,5 +1,6 @@
 import React from 'react';
-import './comentario.css';
+import './comentario.css'
+
 
 const Comentario = props => {
     return (
@@ -8,6 +9,7 @@ const Comentario = props => {
             <p>{props.email}</p>
             <p>{props.children}</p>
             <p>{props.data.toString()}</p>
+            <button onClick={props.onRemove}> X </button>
         </div>
 )}
 
@@ -32,19 +34,41 @@ const LOADING = props => {
     )
 }
 
-const FORMULARIO = props => {
-    return (
-        <form className="formulario" method="POST" onSubmit={props.function}>
-            <fieldset>
-                <legend>Inserir comentário</legend>
-                <input type="text" name="nome" placeholder="Digite seu nome"/>
-                <input type="email" name="email" placeholder="Digite seu email"/>
-                <textarea name="message" rows="4"/>
-                <button type="submit">Adicionar</button>
-            </fieldset>
-        </form>
-    )
-}
+// const FORMULARIO = props => {
+//     return (
+//         <form className="formulario" method="POST" onSubmit={props.function}>
+//             <fieldset>
+//                 <legend>Inserir comentário</legend>
+//                 <input 
+//                     style={{color: props.clr}}
+//                     required
+//                     type="text" 
+//                     name="name" 
+//                     placeholder="Digite seu nome"
+//                     value={props.name}
+//                     onChange={props.change}/>
+
+                
+//                 <input 
+//                     required
+//                     type="email" 
+//                     name="email" 
+//                     placeholder="Digite seu email"
+//                     value={props.email}
+//                     onChange={props.change}/>
+                
+//                 <textarea 
+//                     required
+//                     name="message" 
+//                     rows="4"
+//                     value={props.message}
+//                     onChange={props.change}/>
+
+//                 <button type="submit">Adicionar</button>
+//             </fieldset>
+//         </form>
+//     )
+// }
 
 export default Comentario;
-export {BUTTON, LOADING, FORMULARIO};
+export {BUTTON, LOADING};

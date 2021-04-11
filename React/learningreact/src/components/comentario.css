@@ -9,11 +9,11 @@
     margin-top: 2em;
 }
 
-.Comentario:hover {
+/* .Comentario:hover {
     animation: blink 2s linear infinite alternate,
                bounce .5s ease-in-out infinite alternate;
     cursor: pointer;
-}
+} */
 
 @keyframes blink{
     0%{

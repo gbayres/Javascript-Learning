@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Comentario, {BUTTON, LOADING, FORMULARIO} from './components/comentario';
+import Comentario from './components/comentario';
 
 class App extends Component{
   state = {
@@ -17,48 +17,92 @@ class App extends Component{
         data: new Date(2020, 3, 22),
         message: "Tudo bem sim, meu caro"
       }
-    ]
+    ],
+    novoComentario: {
+      name: '',
+      email: '',
+      message: ''
+    }
   }
   
-  adicionarComentario = () =>{
+
+  digitacao = e => {
+    const {name, value} = e.target;
+    this.setState({novoComentario: {...this.state.novoComentario, [name]: value}})
+  }
+
+  adicionarComentario = (event) =>{
+    event.preventDefault();
     console.log("Adicionando comentário");
 
-    const NOVO_COMENTARIO = {
-      name: "Maria",
-      email: "maria@gmail.com",
-      data: new Date(),
-      message: "Olá pessoal!!!!"
-    }
+    const NOVO_COMENTARIO = {...this.state.novoComentario, data: new Date()};
 
     this.setState({
-      comentarios: [...this.state.comentarios, NOVO_COMENTARIO]
+      comentarios: [...this.state.comentarios, NOVO_COMENTARIO],
+      novoComentario: {name: '', email: '', message: ''}
     })
   }
 
-  removerComentario = () =>{
-    this.setState({
-      comentarios: [...this.state.comentarios].slice(0,-1),
-    })
+  removerComentario = comentario =>{
+    let lista = this.state.comentarios;
+    lista = lista.filter(c => c !== comentario);
+    this.setState({ novoComentario: { comentarios: lista}});
   }
+
 
   render() {
     return(
       <div className="App">
         <h1>Meu projeto</h1>
-        {this.state.comentarios.map(comentario => {
-          return(
+        {this.state.comentarios.map(comentario => (
+        
           <Comentario 
           name={comentario.name}
           email={comentario.email}
-          data={comentario.data}>
+          data={comentario.data}
+          onRemove={this.removerComentario.bind(this, comentario)}>
             {comentario.message}
-          </Comentario>
-          )
-        })}
+          </Comentario>  
+        ))}
 
-        <BUTTON onClick={this.adicionarComentario}>Adicionar um comentário</BUTTON>
-        <BUTTON onClick={this.removerComentario}>Remover um comentário</BUTTON>
-        <FORMULARIO></FORMULARIO>
+        <form className="formulario" method="POST" onSubmit={this.adicionarComentario}>
+            <fieldset>
+                <legend>Inserir comentário</legend>
+                <input 
+                    required
+                    type="text" 
+                    name="name" 
+                    placeholder="Digite seu nome"
+                    value={this.state.novoComentario.name}
+                    onChange={this.digitacao}/>
+
+                <input 
+                    required
+                    type="email" 
+                    name="email" 
+                    placeholder="Digite seu email"
+                    value={this.state.novoComentario.email}
+                    onChange={this.digitacao}/>
+                
+                <textarea 
+                    required
+                    name="message" 
+                    rows="4"
+                    value={this.state.novoComentario.message}
+                    onChange={this.digitacao}/>
+
+                <button type="submit">Adicionar</button>
+            </fieldset>
+        </form>
+
+        {/* <FORMULARIO 
+          function={this.adicionarComentario}
+          name={this.state.novoComentario.name}
+          email={this.state.novoComentario.email}
+          message={this.state.novoComentario.message}
+          change = {this.digitacao}
+          clr={this.state.novoComentario.name}
+        /> */}
         
       </div>
     );
